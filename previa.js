@@ -2,41 +2,47 @@
 export let lista = [1, 3, 5, 7, 2]
 
 export function maiorNumero(lista) {
-    if (lista.length === 0) {
-        console.log('Lista inválida!')
+    if (!Array.isArray(lista) || lista.length === 0) {
+        return null
     } else {
-        lista.Math.max(...lista)
+        return Math.max(...lista)
     }
 }
 
-// export function verificarParOuImpar(numero){
-//     if (numero % 2 === 0){
-//         console.log('Par')
-//     } else {
-//         console.log('Ímpar')
-//     }
-// }
+export function verificarParOuImpar(numero) {
+    if (isNaN(numero)) {
+        return null
+    }
+    if (numero % 2 === 0) {
+        return 'Par'
+    } else {
+        return 'Ímpar'
+    }
+} 
 
 
-// let contador = 0
 
-// export function contarCaracter(palavra){
-//     let percorrerLista = 0
 
-//     while (percorrerLista < palavra.length){
-//         if(palavra[percorrerLista] === 'a' || palavra[percorrerLista] === 'A'){
-//             contador = 1
-//             percorrerLista++
-//         }        
-//     }
-//     console.log(contador)
-// }
+export function contarCaracter(palavra, letra){
 
-// for (let i = 0; i < palavra.length; i++){
-//     if (i === 'a' || i === 'A'){
-//         contador = 1
-//     }
-// }
+    if (isNaN(palavra) && isNaN(letra)){
+        let contador = 0
+        let percorrerLista = 0
 
-// contarCaracter('casa')
-maiorNumero()
+        let palavraMinuscula = palavra.toLowerCase()
+        let letraMinuscula = letra.toLowerCase()
+
+        while (percorrerLista <= palavra.length){
+            if(palavraMinuscula[percorrerLista] === letraMinuscula){
+                contador += 1
+                
+            }  
+            percorrerLista++      
+        }
+        return contador
+    } else {
+        return null
+    }
+    
+}
+
