@@ -46,3 +46,13 @@ export function contarCaracter(palavra, letra){
     
 }
 
+
+
+export function atualizarPropriedade(objeto, palavra, valor){
+    if (objeto[palavra] != null){
+        objeto[palavra] = valor
+        return objeto
+    } else {
+        return null
+    }
+}
