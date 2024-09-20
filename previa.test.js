@@ -4,7 +4,7 @@ import {
   verificarParOuImpar,
   contarCaracter,
   atualizarPropriedade,
-} from "./previa.js";
+} from "../previa.js";
 
 // Teste para a função maiorNumero
 describe("maiorNumero", () => {
